@@ -11,7 +11,7 @@ rect_color = (255, 255, 255)
 pygame.init()
 pygame.mixer.init()
 screen = pygame.display.set_mode((width, height))
-pygame.display.set_caption('game')
+pygame.display.set_caption('pong')
 clock = pygame.time.Clock()
 
 def drawWindow():

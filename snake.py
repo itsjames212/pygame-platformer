@@ -6,10 +6,10 @@ WIDTH = 900
 HEIGHT = 500
 FPS = 60
 
-pygame.init
+pygame.init()
 pygame.mixer.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption('game')
+pygame.display.set_caption('snake')
 clock = pygame.time.Clock()
 
 def openWindowLoop():
