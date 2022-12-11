@@ -6,13 +6,14 @@ pygame.init()
 screen = pygame.display.set_mode((screen_width, screen_height))
 clock = pygame.time.Clock()
 level = Level(level_map, screen)
+sky = pygame.image.load('pygameassets/mSb99p.png')
 
 while True:
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
       pygame.quit()
       sys.exit()
-  screen.fill('black')
+  screen.blit(sky,(0, 0))
   level.run()
 
   pygame.display.update()
