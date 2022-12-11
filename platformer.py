@@ -7,6 +7,8 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 clock = pygame.time.Clock()
 level = Level(level_map, screen)
 sky = pygame.image.load('pygameassets/skybackground.png')
+DEFAULT_SKY_SIZE = (1200, screen_height)
+sky = pygame.transform.scale(sky, DEFAULT_SKY_SIZE)
 
 while True:
   for event in pygame.event.get():
@@ -15,6 +17,5 @@ while True:
       sys.exit()
   screen.blit(sky,(0, 0))
   level.run()
-
   pygame.display.update()
   clock.tick(60)
