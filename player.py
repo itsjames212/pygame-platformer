@@ -15,6 +15,8 @@ class Player(pygame.sprite.Sprite):
             self.direction.x = 5
         elif keys[pygame.K_a]:
             self.direction.x = -5
+        elif keys[pygame.K_SPACE]:
+            self.direction.y = 1
         else:
             self.direction.x = 0
 
