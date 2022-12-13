@@ -53,14 +53,6 @@ class Level:
                 elif player.direction.y < 0:
                     player.rect.top = sprite.rect.bottom
 
-
-
-
-
-
-
-
-
     def run(self):
         #level tiles
         self.tiles.update(self.world_shift)
@@ -71,4 +63,5 @@ class Level:
         self.player.update()
         self.horizontal_movement_collision()
         self.vertical_movement_collision()
+        
         self.player.draw(self.display_surface)
