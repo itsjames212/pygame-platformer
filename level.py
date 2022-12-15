@@ -24,6 +24,7 @@ class Level:
                 if cell == 'P':
                     player_sprite = Player((x, y))
                     self.player.add(player_sprite)
+                
 
 
     def horizontal_movement_collision(self):
@@ -45,8 +46,10 @@ class Level:
             if sprite.rect.colliderect(player.rect):
                 if player.direction.y > 0:
                     player.rect.bottom = sprite.rect.top
+                    player.direction.y = 0
                 elif player.direction.y < 0:
                     player.rect.top = sprite.rect.bottom
+                    player.direction.y = 0
 
 
     def run(self):
@@ -67,10 +70,10 @@ class Level:
         direction_x = player.direction.x
 
         if player_x < 5 and direction_x < 0:
-            self.world_shift = 2
+            self.world_shift = 10
             player.speed = 0
         elif player_x > 1195 and direction_x > 0:
-            self.world_shift = -2
+            self.world_shift = -10
             player.speed = 0
         else:
             self.world_shift = 0
