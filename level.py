@@ -2,7 +2,6 @@ import pygame
 from tiles import Tile
 from settings import tile_size
 from player import Player
-from tiles import Bottom1
 
 class Level:
     def __init__(self, level_data, surface):
@@ -12,7 +11,6 @@ class Level:
 
     def setup_level(self, layout):
         self.tiles = pygame.sprite.Group()
-        self.bottom1Tile = pygame.sprite.Group()
         self.player = pygame.sprite.GroupSingle()
 
         for row_index, row in enumerate(layout):
@@ -20,15 +18,12 @@ class Level:
                 x = column_index * tile_size
                 y = row_index * tile_size
 
-                if cell == 'T':
+                if cell == 'X':
                     tile = Tile((x,y), tile_size)
                     self.tiles.add(tile)
                 if cell == 'P':
                     player_sprite = Player((x, y))
                     self.player.add(player_sprite)
-                if cell == 'X':
-                    tile2 = Bottom1((x,y), tile_size)
-                    self.bottom1Tile.add(tile2)
 
 
     def horizontal_movement_collision(self):
@@ -53,15 +48,30 @@ class Level:
                 elif player.direction.y < 0:
                     player.rect.top = sprite.rect.bottom
 
+
     def run(self):
         #level tiles
         self.tiles.update(self.world_shift)
         self.tiles.draw(self.display_surface)
-        self.bottom1Tile.draw(self.display_surface)
+        self.scroll_x()
 
         #level player
         self.player.update()
         self.horizontal_movement_collision()
         self.vertical_movement_collision()
-        
         self.player.draw(self.display_surface)
+
+    def scroll_x(self):
+        player = self.player.sprite
+        player_x = player.rect.centerx
+        direction_x = player.direction.x
+
+        if player_x < 5 and direction_x < 0:
+            self.world_shift = 2
+            player.speed = 0
+        elif player_x > 1195 and direction_x > 0:
+            self.world_shift = -2
+            player.speed = 0
+        else:
+            self.world_shift = 0
+            player.speed = 1

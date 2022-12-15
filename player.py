@@ -1,5 +1,7 @@
 import pygame
+from settings import *
 from level import *
+from tiles import *
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, pos):
@@ -16,7 +18,7 @@ class Player(pygame.sprite.Sprite):
     def apply_gravity(self):
         self.direction.y += self.gravity
         self.rect.y += self.direction.y
-
+        
     def jump(self):
         self.direction.y = self.jump_speed
 

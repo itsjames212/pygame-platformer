@@ -3,15 +3,7 @@ import pygame
 class Tile(pygame.sprite.Sprite):
     def __init__(self, pos, size):
         super().__init__()
-        self.image = pygame.image.load('pygameassets/groundsprite.png')
-        DEFAULT_GROUND_SIZE = ((size, size))
-        self.image = pygame.transform.scale(self.image, DEFAULT_GROUND_SIZE)
-        self.rect = self.image.get_rect(topleft = pos)
-
-class Bottom1(pygame.sprite.Sprite):
-    def __init__(self, pos, size):
-        super().__init__()
-        self.image = pygame.image.load('pygameassets/belowtoptilesprite.png')
+        self.image = pygame.image.load('pygameassets/newground.png')
         DEFAULT_GROUND_SIZE = ((size, size))
         self.image = pygame.transform.scale(self.image, DEFAULT_GROUND_SIZE)
         self.rect = self.image.get_rect(topleft = pos)
