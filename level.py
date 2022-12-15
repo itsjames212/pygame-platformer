@@ -24,7 +24,6 @@ class Level:
                 if cell == 'P':
                     player_sprite = Player((x, y))
                     self.player.add(player_sprite)
-                
 
 
     def horizontal_movement_collision(self):
