@@ -66,14 +66,22 @@ class Level:
     def scroll_x(self):
         player = self.player.sprite
         player_x = player.rect.centerx
-        direction_x = player.direction.x
+        player_x_direction = player.direction.x
+        player_y_direction = player.direction.y
 
-        if player_x < 5 and direction_x < 0:
-            self.world_shift = 10
-            player.speed = 0
-        elif player_x > 1195 and direction_x > 0:
-            self.world_shift = -10
-            player.speed = 0
+        if player_x_direction == 3:
+            self.world_shift = -3
+            if player_x > 1195:
+                player.speed = 0
+                self.world_shift = -3
+        elif player_x_direction == -3:
+            self.world_shift = 3 
+            if player_x < 5:
+                player.speed = 0
+                self.world_shift = 3
         else:
             self.world_shift = 0
             player.speed = 1
+
+
+        
