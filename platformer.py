@@ -1,6 +1,8 @@
 import pygame, sys
 from settings import *
-from level import Level
+from level import *
+from player import *
+from tiles import *
 
 pygame.init()
 BLACK = (0, 0, 0)
@@ -10,6 +12,14 @@ level = Level(level_map, screen)
 sky = pygame.image.load('pygameassets/backgroundimage.png')
 DEFAULT_SKY_SIZE = (1200, screen_height)
 sky = pygame.transform.scale(sky, DEFAULT_SKY_SIZE)
+
+scroll = [0, 0]
+
+
+
+
+
+
 
 #open loop area
 while True:
