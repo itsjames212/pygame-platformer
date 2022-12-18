@@ -70,15 +70,15 @@ class Level:
         player_y_direction = player.direction.y
 
         if player_x_direction == 3:
-            self.world_shift = -5
+            self.world_shift = -3
             if player_x > 1100 and player_x_direction > 0:
                 player.speed = 0
-                self.world_shift = -5
+                self.world_shift = -3
         elif player_x_direction == -3:
-            self.world_shift = 5 
+            self.world_shift = 3 
             if player_x < 100 and player_x_direction < 0:
                 player.speed = 0
-                self.world_shift = 5
+                self.world_shift = 3
         else:
             self.world_shift = 0
             player.speed = 1
