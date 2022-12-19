@@ -67,12 +67,11 @@ class Level:
         player = self.player.sprite
         player_x = player.rect.centerx
         player_x_direction = player.direction.x
-        player_y_direction = player.direction.y
 
-        if player_x > 1100 and player_x_direction > 0:
+        if player_x > 1000 and player_x_direction > 0:
             player.speed = 0
             self.world_shift = -3
-        elif player_x < 100 and player_x_direction < 0:
+        elif player_x < 200 and player_x_direction < 0:
             player.speed = 0
             self.world_shift = 3
         else:
