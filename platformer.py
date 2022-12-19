@@ -11,7 +11,7 @@ sky = pygame.image.load('pygameassets/backgroundimage.png')
 DEFAULT_SKY_SIZE = (1200, screen_height)
 sky = pygame.transform.scale(sky, DEFAULT_SKY_SIZE)
 
-#open loop area
+# game loop area
 while True:
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
