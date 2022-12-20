@@ -6,7 +6,7 @@ class Tile(pygame.sprite.Sprite):
         self.image = pygame.image.load('pygameassets/newground.png')
         DEFAULT_GROUND_SIZE = ((size, size))
         self.image = pygame.transform.scale(self.image, DEFAULT_GROUND_SIZE)
-        self.rect = self.image.get_rect(topleft = pos)
+        self.rect = self.image.get_rect(topleft=pos)
 
     def update(self, x_shift):
         self.rect.x += x_shift

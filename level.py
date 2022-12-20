@@ -1,5 +1,5 @@
 import pygame
-from tiles import Tile
+from tiles import *
 from settings import tile_size
 from player import Player
 
@@ -19,12 +19,12 @@ class Level:
                 y = row_index * tile_size
 
                 if cell == 'X':
-                    tile = Tile((x,y), tile_size)
+                    tile = Tile((x, y), tile_size)
                     self.tiles.add(tile)
                 if cell == 'P':
                     player_sprite = Player((x, y))
                     self.player.add(player_sprite)
-
+                
 
     def horizontal_movement_collision(self):
         player = self.player.sprite
