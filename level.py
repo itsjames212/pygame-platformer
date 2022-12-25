@@ -25,6 +25,12 @@ class Level:
                 if cell == '2':
                     tile2 = Dirt((x, y), tile_size)
                     self.tiles.add(tile2)
+                if cell == 'R':
+                    tile3 = Rightcorner((x, y), tile_size)
+                    self.tiles.add(tile3)
+                if cell == 'L':
+                    tile4 = Leftcorner((x, y), tile_size)
+                    self.tiles.add(tile4)
                 if cell == 'P':
                     player_sprite = Player((x, y))
                     self.player.add(player_sprite)
