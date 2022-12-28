@@ -11,14 +11,27 @@ level = Level(level_map, screen)
 DEFAULT_SKY_SIZE = (1200, screen_height)
 
 green_health = 300
+white = (255, 255, 255)
 red_health = 300
 health_bar = pygame.image.load('assets/health bar.png')
+x = 1000
+y = 10
+
+
+font = pygame.font.Font('freesansbold.ttf', 16)
+fps = clock
+# set the center of the rectangular object.
 
 
 
 # game loop area
 while True:
+    clock.tick(60)
     screen.fill('black')
+    text = font.render(f'{clock}', True, white)
+    textRect = text.get_rect()
+    textRect.center = (x, y)
+    screen.blit(text, textRect)
     health_red = pygame.draw.rect(screen, 'red', (0, 0, red_health, 40))
     health_green = pygame.draw.rect(screen, 'green', (0, 0, green_health, 40))
     screen.blit(health_bar, (0, 0))
@@ -31,4 +44,4 @@ while True:
     level.run()
     pygame.display.flip()
     pygame.display.update()
-    clock.tick(60)
+    

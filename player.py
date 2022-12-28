@@ -52,6 +52,8 @@ class Player(pygame.sprite.Sprite):
         elif keys[pygame.K_a]:
             self.direction.x = -5
             self.facing_right = False
+        elif keys[pygame.MOUSEBUTTONDOWN]:
+            self.status = 'attack'
         else:
             self.direction.x = 0
 
@@ -64,7 +66,8 @@ class Player(pygame.sprite.Sprite):
             'idle': [],
             'run': [],
             'jump': [],
-            'fall': []
+            'fall': [],
+            'attack': []
         }
         for animation in self.animations.keys():
             full_path = character_path + animation

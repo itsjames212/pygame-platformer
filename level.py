@@ -28,6 +28,12 @@ class Level:
                 if cell == 'R':
                     tile3 = Rightcorner((x, y), tile_size)
                     self.tiles.add(tile3)
+                if cell == '3':
+                    tile5 = Bottomleft((x, y), tile_size)
+                    self.tiles.add(tile5)
+                if cell == '4':
+                    tile6 = Bottomright((x, y), tile_size)
+                    self.tiles.add(tile6)
                 if cell == 'L':
                     tile4 = Leftcorner((x, y), tile_size)
                     self.tiles.add(tile4)
