@@ -32,16 +32,19 @@ while True:
     textRect = text.get_rect()
     textRect.center = (x, y)
     screen.blit(text, textRect)
-    health_red = pygame.draw.rect(screen, 'red', (0, 0, red_health, 40))
-    health_green = pygame.draw.rect(screen, 'green', (0, 0, green_health, 40))
-    screen.blit(health_bar, (0, 0))
+    
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
 
+
+
     level.run()
+    health_red = pygame.draw.rect(screen, 'red', (0, 0, red_health, 40))
+    health_green = pygame.draw.rect(screen, 'green', (0, 0, green_health, 40))
+    screen.blit(health_bar, (0, 0))
     pygame.display.flip()
     pygame.display.update()
     
